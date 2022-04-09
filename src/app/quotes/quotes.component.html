@@ -1,3 +1,5 @@
 <ul *ngFor="let quote of quotes">
-  <li>{{quote.quote}}</li>
+    <li>
+        {{quote.quote}} <span class="text-primary">{{quote.upvote}}</span>
+    </li>
 </ul>
