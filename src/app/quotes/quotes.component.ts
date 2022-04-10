@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
+// import { HighlightDirective } from '../highlight.directive';
 
 @Component({
   selector: 'app-quotes',
@@ -19,6 +20,9 @@ export class QuotesComponent implements OnInit {
     new Quote (5, 'The big lesson in life, baby, is never be scared of anyone or anything.', 'Frank Sinatra','user04', new Date (2022, 2, 27), 0, 0),
     new Quote (6, 'Get busy living or get busy dying.', 'Stephen King', 'User', new Date (2020, 6, 25),0, 0)
   ]
+  
+  array:number[]=this.quotes.map(quote=>quote.upvote)
+  highest=Math.max(...this.array)
  
  
  

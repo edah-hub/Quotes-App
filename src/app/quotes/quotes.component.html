@@ -1,6 +1,18 @@
 <ul *ngFor="let quote of quotes">
-    <li>
-        {{quote.quote}} <span class="text-primary">{{quote.upvote}}upvote</span>
-        <span class="text-warning pl-4">{{quote.downvote}}downvote</span>
-    </li>
+    <div *ngIf="quote.upvote==highest && quote.upvote>0;then highlight else empty"></div> -->
+    <!-- <ng-container *ngIf="quote.id === 1; then highlight else empty"></ng-container> -->
+<ng-template #highlight>
+    <li appHighlight>
+        {{quote.quote}} <span class="text-primary">upvote:{{quote.upvote}}</span>
+        <span class="text-warning pl-4">downvote{{quote.downvote}}</span>
+    </li>    
+</ng-template>
+<ng-template #empty>
+    <li> {{quote.quote}} <span class="text-primary">upvote:{{quote.upvote}}</span>
+        <span class="text-warning pl-4">downvote{{quote.downvote}}</span>
+    </li>    
+</ng-template>
+     
 </ul>
+
+

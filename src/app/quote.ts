@@ -14,6 +14,7 @@
 
 export class Quote {
     public showDetails: boolean;
+  static upvote: any;
     constructor(
       public  id: number,
       public quote: string,
