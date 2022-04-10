@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
+
 // import { HighlightDirective } from '../highlight.directive';
 
 @Component({
@@ -24,8 +25,20 @@ export class QuotesComponent implements OnInit {
   array:number[]=this.quotes.map(quote=>quote.upvote)
   highest=Math.max(...this.array)
  
- 
- 
+
+  addNewQuote(value: Quote){
+    value.submissionDate = new Date(value.submissionDate);
+    this.quotes.unshift(value);
+  }
+  
+  quoteDelete(isDelete: any, index: number){
+    if (isDelete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].authorName}'s quote?`)
+      if (toDelete){
+        this.quotes.splice(index,1);
+      }    
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {

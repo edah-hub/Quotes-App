@@ -3,16 +3,17 @@
     <!-- <ng-container *ngIf="quote.id === 1; then highlight else empty"></ng-container> -->
 <ng-template #highlight>
     <li appHighlight>
-        {{quote.quote}} <span class="text-primary">upvote:{{quote.upvote}}</span>
-        <span class="text-warning pl-4">downvote{{quote.downvote}}</span>
+        {{quote.quote}} <span class="text-primary"><i class="fa fa-thumbs-up" aria-hidden="true"></i>upvote:{{quote.upvote}}</span>
+        <span class="text-warning pl-4"><i class="fa fa-thumbs-down" aria-hidden="true"></i>downvote:{{quote.downvote}}</span>
     </li>    
 </ng-template>
 <ng-template #empty>
-    <li> {{quote.quote}} <span class="text-primary">upvote:{{quote.upvote}}</span>
-        <span class="text-warning pl-4">downvote{{quote.downvote}}</span>
+    <li> {{quote.quote}} <span class="text-primary"><i class="fa fa-thumbs-up" aria-hidden="true"></i>upvote:{{quote.upvote}}</span>
+        <span class="text-warning pl-4"><i class="fa fa-thumbs-down" aria-hidden="true"></i>downvote:{{quote.downvote}}</span>
     </li>    
 </ng-template>
      
 </ul>
+
 
 

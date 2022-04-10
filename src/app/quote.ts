@@ -13,7 +13,7 @@
 
 
 export class Quote {
-    public showDetails: boolean;
+  public showDetails: boolean;
   static upvote: any;
     constructor(
       public  id: number,
