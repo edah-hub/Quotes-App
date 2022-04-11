@@ -13,6 +13,7 @@
               <div [hidden]="!author.errors?.['required']" class="invalid-feedback">
                 <p>Author name required</p>
               </div>
+              
               <div *ngIf="author.errors?.['minlength']">
                 Name must be at least 4 characters long.
               </div>
@@ -35,9 +36,15 @@
                   <p>Name of submitter is required</p>
                 </div>
               </div>
+              <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
               <button [disabled]="newQuote.authorName == '' || newQuote.quote == '' || newQuote.submittedBy == ''" class="btn btn-primary btn-block mb-3" type="submit">
                 Submit Quote
               </button>
           </form>
     </div>
+    <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
 </div>
+
+<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
+<!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>  -->

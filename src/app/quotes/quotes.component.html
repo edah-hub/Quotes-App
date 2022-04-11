@@ -27,14 +27,15 @@
           </p>
           <h6><b>~{{quote.authorName}}</b></h6>
           <span class="space">
-            <button type="button" class="btn btn-success"(click)="quote.upvote=quote.upvote+1"><i class="fa fa-thumbs-up">{{quote.upvote}}</i></button>
+            <button type="button" class="btn btn-info ml-2"(click)="quote.upvote=quote.upvote+1"><i class="fa fa-thumbs-up">{{quote.upvote}}</i></button>
           </span>
           <span class="space">
-            <button type="button" class="btn btn-danger"(click)="quote.downvote=quote.downvote+1"><i class="fa fa-thumbs-down">{{quote.downvote}}</i></button>
+            <button type="button" class="btn btn-warning"(click)="quote.downvote=quote.downvote+1"><i class="fa fa-thumbs-down">{{quote.downvote}}</i></button>
           </span>                
             <p class="more">Published {{quote.submissionDate|dateCount}}</p>         
       </div> 
       <hr>
       <app-quote-info [quote]='quote' *ngIf='quote.showDetails' (isDelete)="quoteDelete($event,i)"></app-quote-info>
+      <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
     </li>
   </ul>
