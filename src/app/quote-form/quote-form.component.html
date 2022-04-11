@@ -4,10 +4,10 @@
     </h5>
     <div class="card card-body">
 
-            <form #entryForm='ngForm' (ngSubmit)="submitQuote()">            
+            <form #entryForm='ngForm' (ngSubmit)="addQuote()">            
             <div class="form-group quoteEntryField">
               <input type="text" class="form-control" id="authorName" name="author" #author='ngModel' [(ngModel)]="newQuote.authorName" 
-                [ngClass]="{'is-invalid': author.errors && author.touched}" required>
+                [ngClass]="{'is-invalid': author.errors || author.touched}" required>
               <i class="fa fa-user" aria-hidden="true"></i>
               <label for="author">Author's Name<span text-color red>*</span></label>
               <div [hidden]="!author.errors?.['required']" class="invalid-feedback">
@@ -21,7 +21,7 @@
 
             <div class="form-group quoteEntryField">
                 <textarea type="text" class="form-control" id="enterQuote" name="quote" [(ngModel)]="newQuote.quote" #quote='ngModel'
-                  [ngClass]="{'is-invalid': quote.errors && quote.touched}" required></textarea>
+                  [ngClass]="{'is-invalid': quote.errors || quote.touched}" required></textarea>
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <label for="quote">Enter Full Quote<span text-color red>*</span> </label>
                 <div [hidden]="!quote.errors?.['required']"class="invalid-feedback">
@@ -42,9 +42,8 @@
               </button>
           </form>
     </div>
-    <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
-</div>
+   
 
-<app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+<!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->
 
 <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>  -->

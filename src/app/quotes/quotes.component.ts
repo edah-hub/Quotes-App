@@ -9,6 +9,9 @@ import { Quote } from '../quote';
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
+  newQuotes(arg0: (a: { datePosted: string | number | Date; }, b: { datePosted: string | number | Date; }) => number) {
+    throw new Error('Method not implemented.');
+  }
   // ngOnInit(): void {
   //   throw new Error('Method not implemented.');
   // }
@@ -24,11 +27,23 @@ export class QuotesComponent implements OnInit {
   
   array:number[]=this.quotes.map(quote=>quote.upvote)
   highest=Math.max(...this.array)
+
+  get quote(){
+    return this.newQuotes((a: { datePosted: string | number | Date; },b: { datePosted: string | number | Date; })=>{
+      return <any>new Date (b.datePosted)-<any>new Date (a.datePosted)
+    });
+  }
  
 
-  addNewQuote(value: Quote){
-    value.submissionDate = new Date(value.submissionDate);
-    this.quotes.unshift(value);
+  // addNewQuote(value: Quote){
+  //   value.submissionDate = new Date(value.submissionDate);
+  //   this.quotes.unshift(value);
+  // }
+ addNewQuote (quote:Quote){
+    let arraysize = this.quotes.length;
+    quote.id = arraysize + 1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
   }
 
   moreDetails(index: number){
