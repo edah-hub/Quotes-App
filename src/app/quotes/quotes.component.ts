@@ -39,6 +39,21 @@ export class QuotesComponent implements OnInit {
       }    
     }
   }
+  counter:number;
+  mostUpvotedQuote: number;
+  currentLikes: number;
+
+  highestLikes(){
+    this.mostUpvotedQuote = this.quotes[0].upvote
+    for (this.counter = 0; this.counter < this.quotes.length;this.counter++){
+      this.currentLikes = this.quotes[this.counter].upvote;
+      if(this.currentLikes > this.mostUpvotedQuote){
+        this.mostUpvotedQuote = this.currentLikes 
+      }
+    }
+      return this.mostUpvotedQuote
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
