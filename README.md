@@ -30,7 +30,7 @@ With this application, users can:
 
 ## Link to the Deployed Page
 
-[]
+[https://edah-hub.github.io/Quotes-App/]
 
 ## Contact Information
 
