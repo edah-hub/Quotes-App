@@ -1,27 +1,49 @@
-# QuotesApp
+## Project Name
+Quotes application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+## Author (s) Information
+Chepngetich Edah
 
-## Development server
+## Description
+This is an Angular 9 application that affords users the opportunity to view and rate quotes from other users as well as the option to share their own quotes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Specifications
+With this application, users can:
+  - Create a new quote.
+  - Upvote or downvote a quote.
+  - Delete a quote.
+  - See the number of upvotes and downvotes of each quote.
+  - View the quote with the most likes in highlighted text.
+## Technologies Used
 
-## Code scaffolding
+  - TypeScript
+  - HTML
+  - CSS
+  - Angular CLI version 9.0.7
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Setup/Installation Requirements
 
-## Build
+  1. Before running this application on your local machine, ensure that you have npm and Angular installed.
+  2. Once you are done with the step above, proceed to clone the application by running git clone https://github.com/edah-hub/Quotes-App.git on the teminal. 
+  3. Navigate to the project’s directory through your terminal. 
+  4. Run ng serve --open, which should initiate and open a server that will display the application on your browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Link to the Deployed Page
 
-## Running unit tests
+[]
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contact Information
 
-## Running end-to-end tests
+In case of any feedback, you can reach me through:
+  -cheruiyotedah@gmail.com
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## License
 
-## Further help
+The MIT License (MIT)
+Copyright (c) 2022 Chepngetich Edah.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+.
+
