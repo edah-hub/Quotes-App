@@ -1,7 +1,7 @@
-<ul *ngFor="let quote of quotes">
+<!-- <ul *ngFor="let quote of quotes">
     <div *ngIf="quote.upvote==highest && quote.upvote>0;then highlight else empty"></div> -->
     <!-- <ng-container *ngIf="quote.id === 1; then highlight else empty"></ng-container> -->
-<ng-template #highlight>
+<!-- <ng-template #highlight>
     <li appHighlight>
         {{quote.quote}} <span class="text-primary"><i class="fa fa-thumbs-up" aria-hidden="true"></i>upvote:{{quote.upvote}}</span>
         <span class="text-warning pl-4"><i class="fa fa-thumbs-down" aria-hidden="true"></i>downvote:{{quote.downvote}}</span>
@@ -13,7 +13,28 @@
     </li>    
 </ng-template>
      
-</ul>
+</ul> --> 
 
 
-
+<ul class="list-unstyled">
+    <li *ngFor="let quote of quotes; let i=index">
+      <div>
+          <p appHighlight *ngIf="highestLikes()=== quote.upvote && quote.upvote > 0">"{{ quote.quote }}"
+            <button class="btn btn-dark btn-sm more" (click)='moreDetails(i)'><i [ngClass]="!quote.showDetails ? 'fa fa-plus' : 'fa fa-minus'"></i></button>
+          </p>
+          <p *ngIf="highestLikes()!== quote.upvote || quote.upvote===0">"{{ quote.quote }}"
+            <button class="btn btn-dark btn-sm more" (click)='moreDetails(i)'><i [ngClass]="!quote.showDetails ? 'fa fa-plus' : 'fa fa-minus'"></i></button>
+          </p>
+          <h6><b>~{{quote.authorName}}</b></h6>
+          <span class="space">
+            <button type="button" class="btn btn-success"(click)="quote.upvote=quote.upvote+1"><i class="fa fa-thumbs-up">{{quote.upvote}}</i></button>
+          </span>
+          <span class="space">
+            <button type="button" class="btn btn-danger"(click)="quote.downvote=quote.downvote+1"><i class="fa fa-thumbs-down">{{quote.downvote}}</i></button>
+          </span>                
+            <p class="more">Published {{quote.submissionDate|dateCount}}</p>         
+      </div> 
+      <hr>
+      <app-quote-info [quote]='quote' *ngIf='quote.showDetails' (isDelete)="quoteDelete($event,i)"></app-quote-info>
+    </li>
+  </ul>

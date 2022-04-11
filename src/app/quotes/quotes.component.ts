@@ -30,6 +30,10 @@ export class QuotesComponent implements OnInit {
     value.submissionDate = new Date(value.submissionDate);
     this.quotes.unshift(value);
   }
+
+  moreDetails(index: number){
+    this.quotes[index].showDetails=!this.quotes[index].showDetails
+  }
   
   quoteDelete(isDelete: any, index: number){
     if (isDelete) {
