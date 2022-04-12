@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers|Dancing+Script|Lobster+Two|Spicy+Rice|Yeseva+One&display=swap');
 
 body{
-  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.countryliving.com%2Flife%2Fnews%2Fg5015%2Fpositive-quotes-about-life%2F&psig=AOvVaw1Bv6GcQRiYQHe8Mfy7i2_C&ust=1649703232580000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCNj__cuVivcCFQAAAAAdAAAAABAD');
+  background-image: url(./assets/bc.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
 }
