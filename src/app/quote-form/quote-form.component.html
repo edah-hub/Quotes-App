@@ -10,8 +10,11 @@
                 [ngClass]="{'is-invalid': author.errors || author.touched}" required>
               <i class="fa fa-user" aria-hidden="true"></i>
               <label for="author">Author's Name<span text-color red>*</span></label>
-              <div [hidden]="!author.errors?.['required']" class="invalid-feedback">
+              <!-- <div [hidden]="!author.errors?.['required']" class="invalid-feedback">
                 <p>Author name required</p>
+              </div> -->
+              <div [hidden]="poster.valid || poster.pristine" class="alert alert-danger">
+                <p>Name is required</p>
               </div>
               
               <div *ngIf="author.errors?.['minlength']">
@@ -24,7 +27,10 @@
                   [ngClass]="{'is-invalid': quote.errors || quote.touched}" required></textarea>
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
                 <label for="quote">Enter Full Quote<span text-color red>*</span> </label>
-                <div [hidden]="!quote.errors?.['required']"class="invalid-feedback">
+                <!-- <div [hidden]="!quote.errors?.['required']"class="invalid-feedback">
+                  <p>Please enter a quote</p>
+                </div> -->
+                <div [hidden]="poster.valid || poster.pristine" class="alert alert-danger">
                   <p>Please enter a quote</p>
                 </div>
               </div>
@@ -32,8 +38,11 @@
                 <input type="text" class="form-control" id="submittedBy" name="poster" [(ngModel)]="newQuote.submittedBy" #poster='ngModel' [ngClass]="{'is-invalid': poster.touched && poster.errors}" required>
                 <i class="fa fa-user" aria-hidden="true"></i>
                 <label>Submitted By <span text-color red>*</span> </label>
-                <div [hidden]="!poster.errors?.['required']" class="invalid-feedback">
+                <!-- <div [hidden]="!poster.errors?.['required']" class="invalid-feedback">
                   <p>Name of submitter is required</p>
+                </div> -->
+                <div [hidden]="poster.valid || poster.pristine" class="alert alert-danger">
+                  <p>Name is required</p>
                 </div>
               </div>
               <!-- <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form> -->

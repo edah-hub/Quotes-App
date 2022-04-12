@@ -14,7 +14,6 @@
 
 export class Quote {
   public showDetails: boolean;
-  // public completeDate:Date;
   static upvote: any;
   completeDate: Date;
     constructor(
